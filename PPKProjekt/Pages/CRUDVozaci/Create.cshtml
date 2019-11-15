@@ -1,0 +1,49 @@
+﻿@page
+@model PPKProjekt.Pages.CRUDVozaci.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Vozac</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Vozac.Ime" class="control-label"></label>
+                <input asp-for="Vozac.Ime" class="form-control" />
+                <span asp-validation-for="Vozac.Ime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vozac.Prezime" class="control-label"></label>
+                <input asp-for="Vozac.Prezime" class="form-control" />
+                <span asp-validation-for="Vozac.Prezime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vozac.BrojMobitela" class="control-label"></label>
+                <input asp-for="Vozac.BrojMobitela" class="form-control" />
+                <span asp-validation-for="Vozac.BrojMobitela" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vozac.SerijskiBrojVozacke" class="control-label"></label>
+                <input asp-for="Vozac.SerijskiBrojVozacke" class="form-control" />
+                <span asp-validation-for="Vozac.SerijskiBrojVozacke" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

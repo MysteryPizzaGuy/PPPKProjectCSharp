@@ -1,0 +1,66 @@
+﻿@page
+@model PPKProjekt.Pages.CRUDPutniNalog.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Putni Nalog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PutniNalog.Vozac.Ime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PutniNalog.Vozac.Ime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PutniNalog.Vozac.Prezime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PutniNalog.Vozac.Prezime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PutniNalog.Vozilo.Tip)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PutniNalog.Vozilo.Tip)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PutniNalog.Vozilo.Marka)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PutniNalog.Vozilo.Marka)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PutniNalog.StartGrad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PutniNalog.StartGrad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PutniNalog.StopGrad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PutniNalog.StopGrad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PutniNalog.StartDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PutniNalog.StartDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PutniNalog.StopDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PutniNalog.StopDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.PutniNalog.IDPutniNalog">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

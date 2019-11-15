@@ -1,0 +1,62 @@
+﻿@page
+
+@model PPKProjekt.Pages.CRUDVozaciila.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Vozilo[0].Tip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vozilo[0].Marka)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vozilo[0].GodinaProizvodnje)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vozilo[0].InicijalniKM)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{if (Model != null)
+            {
+                foreach (var item in Model.Vozilo)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tip)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Marka)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GodinaProizvodnje)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.InicijalniKM)
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.IDVozilo">Edit</a> |
+                            <a asp-page="./Details" asp-route-id="@item.IDVozilo">Details</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.IDVozilo">Delete</a>
+                        </td>
+                    </tr>
+                }
+            } }
+    </tbody>
+</table>
+
+<form method="post"><button class="btn btn-default">Insert Test Case</button></form>
+

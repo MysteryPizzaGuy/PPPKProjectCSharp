@@ -1,0 +1,43 @@
+﻿@page
+@model PPKProjekt.Pages.CRUDVozaci.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vozac</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vozac.Ime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vozac.Ime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Vozac.Prezime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vozac.Prezime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Vozac.BrojMobitela)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vozac.BrojMobitela)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Vozac.SerijskiBrojVozacke)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vozac.SerijskiBrojVozacke)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Vozac.IDVozac">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

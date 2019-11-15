@@ -1,0 +1,82 @@
+﻿@page
+@model PPKProjekt.Pages.CRUDPutniNalog.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form class="" id="FilterForm" method="post" asp-page-handler="FilterGenerated">
+    <label asp-for=" SelectedState"></label>
+    <select class="form-control mb-1" asp-for="SelectedState"
+            asp-items="@Model.SelectedStateList" onchange="this.form.submit()"></select>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PutniNalog[0].Vozac.Ime)
+                @Html.DisplayNameFor(model => model.PutniNalog[0].Vozac.Prezime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PutniNalog[0].Vozilo.Tip)
+                @Html.DisplayNameFor(model => model.PutniNalog[0].Vozilo.Marka)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PutniNalog[0].StartGrad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PutniNalog[0].StopGrad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PutniNalog[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PutniNalog[0].StopDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{if (Model != null)
+            {
+                foreach (var item in Model.PutniNalog)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Vozac.Ime)
+                            @Html.DisplayFor(modelItem => item.Vozac.Prezime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Vozilo.Tip)
+                            @Html.DisplayFor(modelItem => item.Vozilo.Marka)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartGrad)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StopGrad)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StopDate)
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.IDPutniNalog">Edit</a> |
+                            <a asp-page="./Details" asp-route-id="@item.IDPutniNalog">Details</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.IDPutniNalog">Delete</a>
+                        </td>
+                    </tr>
+                }
+            } }
+    </tbody>
+</table>
+
+
+<form method="post"><button class="btn btn-default">Insert Test Case</button></form>
