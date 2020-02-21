@@ -1,56 +1,6 @@
---Kreirajte funkcionalnu aplikaciju za upravljanje flotom vozila. Aplikacija omoguæava korisniku:
---• registraciju vozaèa (ime, prezime, broj mobitela, broj vozaèke dozvole), unos vozila (tip, marka, godina
---proizvodnje, inicijalno stanje kilometara)
---• kreiranje putnog naloga i dodjelu vozila vozaèu, pregled putnih naloga
---o Pregled PN po vozaèu, detalji PN za vozaèa, pregled svih PNa – otvorenih, zatvorenih, buduæih, filtriranih
---o Evidenciju troškova goriva (tko, kada, gdje, koliko i po kojoj cijeni je kupio gorivo)
---• Praæenje prijeðene rute za svaki putni nalog putem GPS-a
---o Osigurati API za automatski unos informacije u aplikaciju: vrijeme, koordinata A i B, prijeðeni kilometri
---izmeðu A i B, prosjeèna brzina izmeðu A i B, potrošeno gorivo izmeðu A I B
---• Praæenje servisnih intervala i troškova servisa vozila
---o unos informacija direktnim naèinom u aplikaciju, pregled
---• Izradu izvještaja:
---o Za putne naloge
---o Za servisne intervale
 
-
---o Procedura za ubacivanje nekoliko testnih zapisa
---o Procedura za èišæenje baze – koja bazu dovodi u stanje bez zapisa
-
---VOZAC
---VOZILO
---PUTNI NALOG
-
-
---• Vozaèi:
---o Forma za jednostavni pregled vozaèa
---o Forma za CRUD pojedinog vozaèa
---o direktni sql za vozaèe
---o SP za vozila
---• Putni nalozi:
---o Forma za pregled putnih naloga + filtriranje po tipu (buduæi, zatvoreni,
---aktivni)
---o Forma za CRUD za putni nalog: odabir vozaèa, odabir slobodnog vozila,
---popunjavanje osnovnih informacija o PNu (start/stop grad, oèekivani broj
---dana, …)
---o transakcije
---• Hvatanje iznimaka korištenjem InfoMessage 
---me, prezime, broj mobitela, broj vozaèke dozvole)
-
---INSERT into tblVozac (IME,Prezime,BrojMobitela,SerijskiBrojVozacke)
---VALUES
---('Andre','Matic','123-4566-123','A1234567'),
---('Iva','Staric','123-4566-124','A2234567'),
---('Starija','Katic','123-4566-125','A3234567')
---GO
---CREATE PROCEDURE InsertTestDrivers
---as
---INSERT into tblVozac (IME,Prezime,BrojMobitela,SerijskiBrojVozacke)
---VALUES
---('Andre','Matic','123-4566-123','A1234567'),
---('Iva','Staric','123-4566-124','A2234567'),
---('Starija','Katic','123-4566-125','A3234567')
 Create Database VehicleControl
+GO
 use VehicleControl
 
 create Table tblVozac(
@@ -61,6 +11,7 @@ BrojMobitela nvarchar(50),
 SerijskiBrojVozacke nvarchar(8),
 
 );
+GO
 --unos vozila (tip, marka, godina
 --proizvodnje, inicijalno stanje kilometara)
 create Table tblVozilo(
@@ -130,10 +81,7 @@ UPDATE tblVozac
 SET Ime=@pIme, Prezime=@pPrezime,BrojMobitela=@pBrojMobitela,SerijskiBrojVozacke=@pSerijskiBrojVozacke
 Where IDVozac=@pID
 
-EXEC SelectallVehicles
 
-Exec InsertTestDrivers
-Exec WipeTheTable
 GO
 
 Create PROCEDURE AddVehicles @pTip nvarchar(50), @pMarka nvarchar(50), @pGodinaProizvodnje DateTime,@pInicijalniKM int
@@ -183,7 +131,6 @@ Create Proc FindVoziloById @pID int
 as
 Select * from tblVozilo where IDVozilo=@pID
 GO
-EXEC SelectAllWarrants
 
 GO
 
@@ -320,13 +267,6 @@ Select * from tblRuta Where IDRuta=@pID
 
 GO
 
-EXEC SelectAllRoutes
-
-Insert into tblRuta(PutniNalogID, Vrijeme, ACoordX, ACoordY, BCoordX, BCoordY, PrijedeniKM, ProsjecniKMH, PotrosenoGorivoLitre)
-values(2,'12/10/2020 12:00',12.45,12.45,45.21,23.54,1000,100,100);
-
-GO;
-
 
 
 CREATE PROCEDURE emptyDB
@@ -356,6 +296,7 @@ IDServisStavka int primary key identity,
 Naziv nvarchar(50)
 )
 -------------------
+GO
 
 CREATE PROC SelectServisStavka
 As
@@ -391,7 +332,7 @@ Create PROCEDURE FindServisStavka @pID int
 as
 Select * from tblServisStavka Where IDServisStavka=@pID
 
-
+GO
 --------------
 
 
@@ -443,3 +384,5 @@ Create PROCEDURE FindServis @pID int
 as
 Select * from tblServis Where IDServis=@pID
 
+
+Select * from tblVozac
