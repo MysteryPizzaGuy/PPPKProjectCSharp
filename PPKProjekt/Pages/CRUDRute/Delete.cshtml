@@ -1,0 +1,71 @@
+﻿@page
+@model PPKProjekt.Pages.CRUDRute.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Ruta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ruta.Vrijeme)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ruta.Vrijeme)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ruta.ACoordX)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ruta.ACoordX)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ruta.ACoordY)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ruta.ACoordY)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ruta.BCoordX)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ruta.BCoordX)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ruta.BCoordY)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ruta.BCoordY)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ruta.PrijedeniKM)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ruta.PrijedeniKM)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ruta.ProsjecniKMH)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ruta.ProsjecniKMH)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ruta.PotrosenoGorivoLitre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ruta.PotrosenoGorivoLitre)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Ruta.IDRuta" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

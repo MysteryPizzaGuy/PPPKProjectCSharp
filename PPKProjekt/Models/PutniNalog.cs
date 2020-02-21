@@ -9,6 +9,7 @@ namespace PPKProjekt.Models
     public class PutniNalog
     {
         [Key]
+
         public int IDPutniNalog { get; set; }
 
         public Vozac Vozac { get; set; }

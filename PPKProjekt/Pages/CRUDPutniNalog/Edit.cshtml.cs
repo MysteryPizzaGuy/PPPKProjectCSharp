@@ -73,7 +73,7 @@ namespace PPKProjekt.Pages.CRUDPutniNalog
             {
                 PutniNalog.Vozilo = voziloRepo.FindById(Vozilo);
                 PutniNalog.Vozac = vozacRepo.FindById(Vozac);
-                if (!repo.FindBetweenDates(PutniNalog.StartDate, PutniNalog.StopDate).Any())
+                if (!repo.FindBetweenDates(PutniNalog.StartDate, PutniNalog.StopDate).Any(x=>x.IDPutniNalog!=PutniNalog.IDPutniNalog))
                 {
                     repo.Update(PutniNalog);
                     return RedirectToPage("./Index");

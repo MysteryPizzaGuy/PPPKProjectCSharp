@@ -1,0 +1,37 @@
+﻿@page
+@model PPKProjekt.Pages.DatabaseBackup.IndexModel
+@{
+    ViewData["Title"] = "Backup Center";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row text-light ">
+        <div class="col-sm-4 border-primary border rounded" style="width:33%; height:100px; background-color:aquamarine; display:flex; align-items:center; justify-content:center; ">
+            <form method="post">
+                <button asp-page-handler="Backup" class="btn btn-default">BACKUP DATABASE</button>
+            </form>
+
+
+        </div>
+        <div class="col-sm-4 border rounded " style="width:33%; height:100px; background-color:lemonchiffon;  display:flex; align-items:center; justify-content:center;">
+
+            <form method="post">
+                <button asp-page-handler="Restore" class="btn btn-default">RESTORE DATABASE</button>
+            </form>
+        </div>
+        <div class="col-sm-4 border rounded " style="width:33%; height:100px; background-color:lemonchiffon;  display:flex; align-items:center; justify-content:center;">
+
+            <form method="post">
+                <button asp-page-handler="RouteWrite" class="btn btn-default">Write Route XML</button>
+            </form>
+        </div>
+        <div class="col-sm-4 border rounded " style="width:33%; height:100px; background-color:lemonchiffon;  display:flex; align-items:center; justify-content:center;">
+
+            <form method="post">
+                <button asp-page-handler="RouteRead" class="btn btn-default">Read Route XML</button>
+            </form>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,80 @@
+﻿@page
+@model PPKProjekt.Pages.CRUDRute.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-route-id="@Model.pnID" asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ruta[0].Vrijeme)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ruta[0].ACoordX)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ruta[0].ACoordY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ruta[0].BCoordX)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ruta[0].BCoordY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ruta[0].PrijedeniKM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ruta[0].ProsjecniKMH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ruta[0].PotrosenoGorivoLitre)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Ruta) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vrijeme)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ACoordX)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ACoordY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BCoordX)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BCoordY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrijedeniKM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProsjecniKMH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PotrosenoGorivoLitre)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IDRuta">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.IDRuta">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IDRuta" >Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

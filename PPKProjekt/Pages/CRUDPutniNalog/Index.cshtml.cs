@@ -25,6 +25,8 @@ namespace PPKProjekt.Pages.CRUDPutniNalog
         public IList<SelectListItem> SelectedStateList { get; set; } = new List<SelectListItem>();
 
 
+
+
         public IndexModel()
         {
             repo = new PutniNalogRepository();
@@ -36,6 +38,7 @@ namespace PPKProjekt.Pages.CRUDPutniNalog
 
 
         }
+
         public IList<PutniNalog> PutniNalog { get; set; }
 
         public void OnGet(NalogState? nowState)

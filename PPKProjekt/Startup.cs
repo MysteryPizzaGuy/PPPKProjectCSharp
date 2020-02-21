@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using PPKProjekt.Models;
+using PPKProjekt.EntityFramework;
 
 namespace PPKProjekt
 {
@@ -33,6 +36,8 @@ namespace PPKProjekt
             services.ConfigureRepositoryWrapper();
             services.ConfigureSqlServerContext(Configuration);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddScoped<VehicleControlContext>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

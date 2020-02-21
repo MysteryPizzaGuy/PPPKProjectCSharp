@@ -1,0 +1,71 @@
+﻿@page
+@model PPKProjekt.Pages.CRUDRute.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>Ruta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Ruta.IDRuta" />
+            <div class="form-group">
+                <label asp-for="Ruta.Vrijeme" class="control-label"></label>
+                <input asp-for="Ruta.Vrijeme" class="form-control" />
+                <span asp-validation-for="Ruta.Vrijeme" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ruta.ACoordX" class="control-label"></label>
+                <input asp-for="Ruta.ACoordX" class="form-control" />
+                <span asp-validation-for="Ruta.ACoordX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ruta.ACoordY" class="control-label"></label>
+                <input asp-for="Ruta.ACoordY" class="form-control" />
+                <span asp-validation-for="Ruta.ACoordY" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ruta.BCoordX" class="control-label"></label>
+                <input asp-for="Ruta.BCoordX" class="form-control" />
+                <span asp-validation-for="Ruta.BCoordX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ruta.BCoordY" class="control-label"></label>
+                <input asp-for="Ruta.BCoordY" class="form-control" />
+                <span asp-validation-for="Ruta.BCoordY" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ruta.PrijedeniKM" class="control-label"></label>
+                <input asp-for="Ruta.PrijedeniKM" class="form-control" />
+                <span asp-validation-for="Ruta.PrijedeniKM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ruta.ProsjecniKMH" class="control-label"></label>
+                <input asp-for="Ruta.ProsjecniKMH" class="form-control" />
+                <span asp-validation-for="Ruta.ProsjecniKMH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ruta.PotrosenoGorivoLitre" class="control-label"></label>
+                <input asp-for="Ruta.PotrosenoGorivoLitre" class="form-control" />
+                <span asp-validation-for="Ruta.PotrosenoGorivoLitre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

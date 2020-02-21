@@ -1,0 +1,53 @@
+﻿@page
+@model PPKProjekt.Pages.HTMLReportGenerate.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TblVozilo[0].Tip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblVozilo[0].Marka)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblVozilo[0].GodinaProizvodnje)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblVozilo[0].InicijalniKm)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TblVozilo) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GodinaProizvodnje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InicijalniKm)
+            </td>
+            <td>
+                <a asp-page="./Details" asp-route-id="@item.Idvozilo">Report</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

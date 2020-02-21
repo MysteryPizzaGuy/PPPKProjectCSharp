@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using PPKProjekt.DataSet;
 
 namespace PPKProjekt.Pages
 {
@@ -12,6 +13,9 @@ namespace PPKProjekt.Pages
         public void OnGet()
         {
 
+        }
+        public void OnPost()
+        {
         }
     }
 }

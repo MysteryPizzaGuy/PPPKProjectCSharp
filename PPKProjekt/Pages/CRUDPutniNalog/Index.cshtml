@@ -70,7 +70,9 @@
                         <td>
                             <a asp-page="./Edit" asp-route-id="@item.IDPutniNalog">Edit</a> |
                             <a asp-page="./Details" asp-route-id="@item.IDPutniNalog">Details</a> |
-                            <a asp-page="./Delete" asp-route-id="@item.IDPutniNalog">Delete</a>
+                            <a asp-page="./Delete" asp-route-id="@item.IDPutniNalog">Delete</a> |
+                            <a asp-page="../CRUDRute/Index" asp-route-id="@item.IDPutniNalog">See Routes</a>
+
                         </td>
                     </tr>
                 }

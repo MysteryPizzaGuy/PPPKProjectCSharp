@@ -1,0 +1,156 @@
+<PPPKDATABASE>
+  <xs:schema id="PPPKDATABASE" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="PPPKDATABASE" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="IDRuta" type="xs:int" minOccurs="0" />
+                <xs:element name="PutniNalogID" type="xs:int" minOccurs="0" />
+                <xs:element name="Vrijeme" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="ACoordX" type="xs:int" minOccurs="0" />
+                <xs:element name="ACoordY" type="xs:int" minOccurs="0" />
+                <xs:element name="BCoordX" type="xs:int" minOccurs="0" />
+                <xs:element name="BCoordY" type="xs:int" minOccurs="0" />
+                <xs:element name="PrijedeniKM" type="xs:double" minOccurs="0" />
+                <xs:element name="ProsjecniKMH" type="xs:double" minOccurs="0" />
+                <xs:element name="PotrosenoGorivoLitre" type="xs:double" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Table1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="IDPutniNalog" type="xs:int" minOccurs="0" />
+                <xs:element name="VozacID" type="xs:int" minOccurs="0" />
+                <xs:element name="VoziloID" type="xs:int" minOccurs="0" />
+                <xs:element name="StartGrad" type="xs:string" minOccurs="0" />
+                <xs:element name="StopGrad" type="xs:string" minOccurs="0" />
+                <xs:element name="StartDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="StopDate" type="xs:dateTime" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Table2">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="IDKupnjaGoriva" type="xs:int" minOccurs="0" />
+                <xs:element name="PutniNalogID" type="xs:int" minOccurs="0" />
+                <xs:element name="Lokacija" type="xs:string" minOccurs="0" />
+                <xs:element name="GorivoPoLitri" type="xs:double" minOccurs="0" />
+                <xs:element name="CijenaPoLitri" type="xs:double" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Table3">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="IDVozac" type="xs:int" minOccurs="0" />
+                <xs:element name="Ime" type="xs:string" minOccurs="0" />
+                <xs:element name="Prezime" type="xs:string" minOccurs="0" />
+                <xs:element name="BrojMobitela" type="xs:string" minOccurs="0" />
+                <xs:element name="SerijskiBrojVozacke" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Table4">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="IDVozilo" type="xs:int" minOccurs="0" />
+                <xs:element name="Tip" type="xs:string" minOccurs="0" />
+                <xs:element name="Marka" type="xs:string" minOccurs="0" />
+                <xs:element name="GodinaProizvodnje" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="InicijalniKM" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table>
+    <IDRuta>3</IDRuta>
+    <PutniNalogID>1</PutniNalogID>
+    <Vrijeme>2020-12-10T12:00:00+01:00</Vrijeme>
+    <ACoordX>12</ACoordX>
+    <ACoordY>12</ACoordY>
+    <BCoordX>45</BCoordX>
+    <BCoordY>23</BCoordY>
+    <PrijedeniKM>1000</PrijedeniKM>
+    <ProsjecniKMH>100</ProsjecniKMH>
+    <PotrosenoGorivoLitre>100</PotrosenoGorivoLitre>
+  </Table>
+  <Table>
+    <IDRuta>4</IDRuta>
+    <PutniNalogID>2</PutniNalogID>
+    <Vrijeme>2020-12-10T12:00:00+01:00</Vrijeme>
+    <ACoordX>12</ACoordX>
+    <ACoordY>12</ACoordY>
+    <BCoordX>45</BCoordX>
+    <BCoordY>23</BCoordY>
+    <PrijedeniKM>1000</PrijedeniKM>
+    <ProsjecniKMH>100</ProsjecniKMH>
+    <PotrosenoGorivoLitre>100</PotrosenoGorivoLitre>
+  </Table>
+  <Table1>
+    <IDPutniNalog>1</IDPutniNalog>
+    <VozacID>38</VozacID>
+    <VoziloID>1</VoziloID>
+    <StartGrad>Rijeka</StartGrad>
+    <StopGrad>Kijev</StopGrad>
+    <StartDate>2019-10-01T00:00:00+02:00</StartDate>
+    <StopDate>2019-11-01T00:00:00+01:00</StopDate>
+  </Table1>
+  <Table1>
+    <IDPutniNalog>2</IDPutniNalog>
+    <VozacID>38</VozacID>
+    <VoziloID>1</VoziloID>
+    <StartGrad>Rijeka</StartGrad>
+    <StopGrad>Kijev</StopGrad>
+    <StartDate>2019-11-15T00:00:00+01:00</StartDate>
+    <StopDate>2019-11-15T00:00:00+01:00</StopDate>
+  </Table1>
+  <Table3>
+    <IDVozac>38</IDVozac>
+    <Ime>Ivana</Ime>
+    <Prezime>Staric-Novo</Prezime>
+    <BrojMobitela>123-4566-421</BrojMobitela>
+    <SerijskiBrojVozacke>A2234111</SerijskiBrojVozacke>
+  </Table3>
+  <Table3>
+    <IDVozac>39</IDVozac>
+    <Ime>Starija</Ime>
+    <Prezime>Katic</Prezime>
+    <BrojMobitela>123-4566-125</BrojMobitela>
+    <SerijskiBrojVozacke>A3234567</SerijskiBrojVozacke>
+  </Table3>
+  <Table4>
+    <IDVozilo>1</IDVozilo>
+    <Tip>Sedan</Tip>
+    <Marka>Volvo</Marka>
+    <GodinaProizvodnje>2019-11-05T00:00:00+01:00</GodinaProizvodnje>
+    <InicijalniKM>10001</InicijalniKM>
+  </Table4>
+  <Table4>
+    <IDVozilo>3</IDVozilo>
+    <Tip>Minivan</Tip>
+    <Marka>Fiat</Marka>
+    <GodinaProizvodnje>1905-06-24T00:00:00+02:00</GodinaProizvodnje>
+    <InicijalniKM>19500</InicijalniKM>
+  </Table4>
+  <Table4>
+    <IDVozilo>4</IDVozilo>
+    <Tip>TestTip</Tip>
+    <Marka>TestMarka</Marka>
+    <GodinaProizvodnje>1921-11-12T00:00:00+01:00</GodinaProizvodnje>
+    <InicijalniKM>10001</InicijalniKM>
+  </Table4>
+  <Table4>
+    <IDVozilo>5</IDVozilo>
+    <Tip>TestTip2</Tip>
+    <Marka>TestMarka2</Marka>
+    <GodinaProizvodnje>1922-11-12T00:00:00+01:00</GodinaProizvodnje>
+    <InicijalniKM>10222</InicijalniKM>
+  </Table4>
+</PPPKDATABASE>

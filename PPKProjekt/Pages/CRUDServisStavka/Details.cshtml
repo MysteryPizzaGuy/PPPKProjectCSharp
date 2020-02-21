@@ -1,0 +1,26 @@
+﻿@page
+@model PPKProjekt.Pages.CRUDServisStavka.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ServisStavka</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ServisStavka.Naziv)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ServisStavka.Naziv)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ServisStavka.IDServisStavka">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
