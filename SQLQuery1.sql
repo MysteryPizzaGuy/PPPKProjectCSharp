@@ -385,4 +385,3 @@ as
 Select * from tblServis Where IDServis=@pID
 
 
-Select * from tblVozac
