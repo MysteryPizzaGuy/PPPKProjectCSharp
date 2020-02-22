@@ -1,0 +1,26 @@
+<NewDataSet>
+  <Table>
+    <IDRuta>4</IDRuta>
+    <PutniNalogID>2</PutniNalogID>
+    <Vrijeme>2020-12-10T12:00:00+01:00</Vrijeme>
+    <ACoordX>12</ACoordX>
+    <ACoordY>12</ACoordY>
+    <BCoordX>45</BCoordX>
+    <BCoordY>23</BCoordY>
+    <PrijedeniKM>1000</PrijedeniKM>
+    <ProsjecniKMH>100</ProsjecniKMH>
+    <PotrosenoGorivoLitre>100</PotrosenoGorivoLitre>
+  </Table>
+  <Table>
+    <IDRuta>5</IDRuta>
+    <PutniNalogID>1</PutniNalogID>
+    <Vrijeme>1999-12-12T12:12:00+01:00</Vrijeme>
+    <ACoordX>12</ACoordX>
+    <ACoordY>12</ACoordY>
+    <BCoordX>12</BCoordX>
+    <BCoordY>12</BCoordY>
+    <PrijedeniKM>12</PrijedeniKM>
+    <ProsjecniKMH>12</ProsjecniKMH>
+    <PotrosenoGorivoLitre>12</PotrosenoGorivoLitre>
+  </Table>
+</NewDataSet>
